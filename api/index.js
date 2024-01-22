@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 
 import userRoutes from "./routes/user.route.js"
+import authRoutes from "./routes/auth.route.js"
 
 dotenv.config();
 
@@ -22,5 +23,7 @@ app.listen(3000,()=>{
     console.log('Server is running on port 3000!!');
 });
 
+app.use(express.json()); //to send the json data while testing from postman
 
 app.use('/api/user',userRoutes);
+app.use('/api/auth',authRoutes)
