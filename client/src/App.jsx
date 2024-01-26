@@ -7,6 +7,7 @@ import SignUp from './Pages/SignUp'
 import Dashboard from './Pages/Dashboard'
 import Projects from './Pages/Projects'
 import Header from './Components/Header'
+import FooterCom from './Components/Footer'
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
       <Route path='/sign-up' element={ <SignUp/> } />
       <Route path='/dashboard' element={ <Dashboard/> } />
       <Route path='/projects' element={ <Projects/> } />
-
-
-
      </Routes>
+
+      <FooterCom/>
+
   </BrowserRouter>
   )
 }
