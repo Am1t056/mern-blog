@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import userRoutes from "./routes/user.route.js"
 import authRoutes from "./routes/auth.route.js"
 
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -27,6 +28,7 @@ app.use(express.json()); //to send the json data while testing from postman
 
 app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes)
+
 
 
 //(req,res,next) ko lagi
