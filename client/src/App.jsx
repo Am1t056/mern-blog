@@ -8,6 +8,7 @@ import Dashboard from './Pages/Dashboard'
 import Projects from './Pages/Projects'
 import Header from './Components/Header'
 import FooterCom from './Components/Footer'
+import PrivateRouteD from './Components/PrivateRouteD'
 
 function App() {
   return (
@@ -20,7 +21,13 @@ function App() {
       <Route path='/about' element={ <About/> } />
       <Route path='/sign-in' element={ <SignIn/> } />
       <Route path='/sign-up' element={ <SignUp/> } />
-      <Route path='/dashboard' element={ <Dashboard/> } />
+
+        <Route element={<PrivateRouteD/>}> 
+            <Route path='/dashboard' element={ <Dashboard/> } />
+         </Route>
+     
+
+
       <Route path='/projects' element={ <Projects/> } />
      </Routes>
 
