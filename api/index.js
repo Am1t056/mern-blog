@@ -8,6 +8,10 @@ import userRoutes from "./routes/user.route.js"
 import authRoutes from "./routes/auth.route.js"
 
 
+//to access token from the browser
+import cookieParser from "cookie-parser";
+
+
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -25,9 +29,11 @@ app.listen(3000,()=>{
 });
 
 app.use(express.json()); //to send the json data while testing from postman
+app.use(cookieParser());
 
 app.use('/api/user',userRoutes);
-app.use('/api/auth',authRoutes)
+app.use('/api/auth',authRoutes);
+
 
 
 
